@@ -30,6 +30,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'lukaszb/vim-web-indent'
 Plugin 'tpope/vim-haml'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'evanmiller/nginx-vim-syntax'
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
