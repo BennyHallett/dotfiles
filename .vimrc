@@ -139,6 +139,8 @@ set enc=utf-8
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
 
+silent! map <unique> <Leader>s :set spell!<CR>
+
 map <C-N> :vsp .<CR>
 map <C-C> :q<CR>
 
