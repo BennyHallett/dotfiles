@@ -29,6 +29,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'lukaszb/vim-web-indent'
 Plugin 'tpope/vim-haml'
+Plugin "ekalinin/Dockerfile.vim"
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
