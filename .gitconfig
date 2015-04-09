@@ -1,0 +1,7 @@
+[user]
+	name = BennyHallett
+	email = benny.hallett@gmail.com
+[core]
+	editor = vim
+[push]
+	default = simple

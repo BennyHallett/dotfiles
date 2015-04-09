@@ -141,6 +141,7 @@ set enc=utf-8
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
 
 silent! map <unique> <Leader>s :set spell!<CR>
+silent! map <unique> <Leader>r :!bundle exec rake<CR>
 
 map <C-N> :vsp .<CR>
 map <C-C> :q<CR>
