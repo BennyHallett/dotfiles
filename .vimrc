@@ -69,7 +69,7 @@ let g:ctrlp_match_window_bottom = 1    " Show at bottom of window
     \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)$',
     \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
     \ }
-  let g:ctrlp_user_command = 'find %s -type f'
+  "let g:ctrlp_user_command = 'find %s -type f'
   let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-e>', '<c-space>'],
     \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
