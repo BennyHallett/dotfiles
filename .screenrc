@@ -1,0 +1,11 @@
+startup_message off
+vbell off
+defscrollback 30000
+termcapinfo xterm "ks=E[?1lE:kuE[A:kd=E[B:kl=E[D:kr=E[C:kh=E[5~:kH=E [F"
+altscreen on
+autodetach on
+caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+shell -$SHELL
+term screen-256color

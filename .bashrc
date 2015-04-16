@@ -118,3 +118,6 @@ if [ -d "$HOME/tools/elixir/current/bin" ] ; then
   PATH="$HOME/tools/elixir/current/bin:$PATH"
 fi
 
+### Force 256color term for screen
+export TERM=xterm-256color
+
