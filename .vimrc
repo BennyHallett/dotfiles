@@ -142,6 +142,7 @@ set enc=utf-8
 
 silent! map <unique> <Leader>s :set spell!<CR>
 silent! map <unique> <Leader>r :!bundle exec rake<CR>
+silent! map <unique> <Leader>m :!mix test<CR>
 
 map <C-N> :vsp .<CR>
 map <C-C> :q<CR>
