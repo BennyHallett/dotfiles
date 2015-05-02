@@ -119,5 +119,13 @@ if [ -d "$HOME/tools/elixir/current/bin" ] ; then
 fi
 
 ### Force 256color term for screen
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
+# OCTGN
+
+start_octgn() {
+  export WINEPREFIX=~/.wine-octgn
+  wine ~/OCTGN/OCTGN/OCTGN.exe
+}
+
+alias octgn=start_octgn
