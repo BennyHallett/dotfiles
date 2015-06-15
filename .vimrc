@@ -33,8 +33,9 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-rails'
 "Plugin 'junegunn/vim-emoji'
-"Plugin 'tpope/vim-rails'
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
@@ -131,7 +132,23 @@ filetype plugin indent on
 
 silent! map <unique> <Leader>gs :Gstatus<CR>
 silent! map <unique> <Leader>gb :Gblame<CR>
-silent! map <unique> <Leader>gg :Ggrep 
+silent! map <unique> <Leader>gr :Ggrep 
+
+
+""""""""""""""""""""""""""""""""""
+" Rails Settings
+""""""""""""""""""""""""""""""""""
+
+silent! map <unique> <Leader>rm :Vmodel<CR>
+silent! map <unique> <Leader>rv :Vview<CR>
+silent! map <unique> <Leader>rc :Vcontroller<CR>
+silent! map <unique> <Leader>rt :Rails console<CR>
+silent! map <unique> <Leader>rs :Rails server<CR>
+silent! map <unique> <Leader>rx :Rextract 
+silent! map <unique> <Leader>rgc :Rgenerate controller 
+silent! map <unique> <Leader>rgm :Rgenerate model 
+silent! map <unique> <Leader>rgg :Rgenerate migration 
+silent! map <unique> <Leader>rgj :Rgenerate job 
 
 """"""""""""""""""""""""""""""""""
 " Editor Settings
@@ -154,7 +171,7 @@ set enc=utf-8
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
 
 silent! map <unique> <Leader>s :set spell!<CR>
-silent! map <unique> <Leader>r :!bundle exec rake<CR>
+silent! map <unique> <Leader>k :!bundle exec rake<CR>
 silent! map <unique> <Leader>m :!mix test<CR>
 
 map <C-N> :vsp .<CR>
