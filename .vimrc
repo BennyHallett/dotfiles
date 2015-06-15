@@ -31,6 +31,10 @@ Plugin 'lukaszb/vim-web-indent'
 Plugin 'tpope/vim-haml'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'vimwiki/vimwiki'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'junegunn/vim-emoji'
+"Plugin 'tpope/vim-rails'
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
@@ -113,12 +117,21 @@ Plugin 'bling/vim-airline'
   let g:airline_paste_symbol = 'Þ'
   let g:airline_paste_symbol = '∥'
   let g:airline#extensions#tabline#enabled = 0
+  let g:airline#section_b = "%{fugitive#statusline()}"
 Plugin 'chriskempson/base16-vim'
 Plugin 'dandorman/vim-colors'
 
 
 call vundle#end()
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""
+" Git Settings
+""""""""""""""""""""""""""""""""""
+
+silent! map <unique> <Leader>gs :Gstatus<CR>
+silent! map <unique> <Leader>gb :Gblame<CR>
+silent! map <unique> <Leader>gg :Ggrep 
 
 """"""""""""""""""""""""""""""""""
 " Editor Settings
@@ -128,7 +141,7 @@ set tabstop=2
 set expandtab
 set shiftwidth=2
 set syntax=on
-set number
+set relativenumber
 set t_Co=256
 set guioptions="agimrLt"
 set mouse=""
