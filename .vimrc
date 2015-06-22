@@ -35,7 +35,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails'
-"Plugin 'junegunn/vim-emoji'
+Plugin 'KabbAmine/zeavim'
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
