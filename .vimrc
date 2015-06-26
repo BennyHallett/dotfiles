@@ -36,6 +36,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails'
 Plugin 'KabbAmine/zeavim'
+Plugin 'mustache/vim-mustache-handlebars'
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
@@ -149,6 +150,12 @@ silent! map <unique> <Leader>rgc :Rgenerate controller
 silent! map <unique> <Leader>rgm :Rgenerate model 
 silent! map <unique> <Leader>rgg :Rgenerate migration 
 silent! map <unique> <Leader>rgj :Rgenerate job 
+
+""""""""""""""""""""""""""""""""""
+" SimpleCov-Vim Settings
+""""""""""""""""""""""""""""""""""
+
+silent! map <unique> <Leader>c :so coverage.vim<CR>
 
 """"""""""""""""""""""""""""""""""
 " Editor Settings
