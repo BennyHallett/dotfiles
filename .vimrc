@@ -171,6 +171,7 @@ set guioptions="agimrLt"
 set mouse=""
 set t_ut=
 set background=dark
+set backupdir=~/.vimbak
 syntax enable
 colorscheme molokai
 set enc=utf-8
