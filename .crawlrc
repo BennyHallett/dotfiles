@@ -1,0 +1,14 @@
+charset                 = unicode
+autofight_stop          = 50
+
+## EATING
+easy_eat_chunks         = true
+easy_eat_gourmand       = true
+easy_eat_contaminated   = true
+auto_eat_chunks         = true
+auto_drop_chunks        = rotten
+
+## FORCE ACKNOWLEDGEMENT
+force_more_message      += skill increases to level
+force_more_message      += Found a staircase to the
+force_more_message      += Found a stone stair

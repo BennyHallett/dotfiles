@@ -1,55 +1,95 @@
-""""""""""""""""""""""""""""""""""
-" @bennyhallett's vimrc
-" Based off @knewter's at
-" http://www.isotope11.com/blog/rebuilding-my-vim-setup-from-scratch
-"
-"
-" VUNDLE
-""""""""""""""""""""""""""""""""""
+" Freshly Baked VimRC
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle Setup
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-
 Plugin 'gmarik/Vundle.vim'
 
-""""""""""""""""""""""""""""""""""
-" File Types
-""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Ruby
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-rails'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-endwise'
+
+silent! map <unique> <Leader>rm :Vmodel<CR>
+silent! map <unique> <Leader>rv :Vview<CR>
+silent! map <unique> <Leader>rc :Vcontroller<CR>
+silent! map <unique> <Leader>rt :Rails console<CR>
+silent! map <unique> <Leader>rs :Rails server<CR>
+silent! map <unique> <Leader>rx :Rextract 
+silent! map <unique> <Leader>rgc :Rgenerate controller 
+silent! map <unique> <Leader>rgm :Rgenerate model 
+silent! map <unique> <Leader>rgg :Rgenerate migration 
+silent! map <unique> <Leader>rgj :Rgenerate job 
+
+silent! map <unique> <Leader>c :so coverage.vim<CR>
+
+silent! map <unique> <Leader>k :!bundle exec rake<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Elixir
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
 Plugin 'elixir-lang/vim-elixir'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Web
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'cakebaker/scss-syntax'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'lukaszb/vim-web-indent'
-Plugin 'tpope/vim-haml'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Redis
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plugin 'junegunn/vim-redis'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Postgres
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plugin 'exu/pgsql.vim'
+autocmd BufNewFile,BufRead *.sql setf pgsql
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" General Editing
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plugin 'tpope/vim-speeddating'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Infrastructure
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'vimwiki/vimwiki'
+Plugin 'sclo/haproxy.vim'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Dev Tools
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-rails'
-Plugin 'KabbAmine/zeavim'
-Plugin 'mustache/vim-mustache-handlebars'
+silent! map <unique> <Leader>gs :Gstatus<CR>
+silent! map <unique> <Leader>gb :Gblame<CR>
+silent! map <unique> <Leader>gr :Ggrep 
 
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
-
-""""""""""""""""""""""""""""""""""
-" Utilities
-""""""""""""""""""""""""""""""""""
-Plugin 'scrooloose/syntastic'
-Plugin 'skalnik/vim-vroom'
-  let g:vroom_map_keys = 0
-  silent! map <unique> <Leader>t :VroomRunTestFile<CR>
-  silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
-  silent! map <unique> <Leader>l :VroomRunLastTest<CR>
 
 """"""""""""""""""""""""""""""""""
 " Navigation
@@ -97,11 +137,11 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
+
 """"""""""""""""""""""""""""""""""
-" Code Formatting and Prettyness
+" Status Line
 """"""""""""""""""""""""""""""""""
 
-Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
   set laststatus=2
   let g:airline_theme='luna'
@@ -120,71 +160,46 @@ Plugin 'bling/vim-airline'
   let g:airline_paste_symbol = '∥'
   let g:airline#extensions#tabline#enabled = 0
   let g:airline#section_b = "%{fugitive#statusline()}"
+
+""""""""""""""""""""""""""""""""""
+" Colouring
+""""""""""""""""""""""""""""""""""
+
 Plugin 'chriskempson/base16-vim'
 Plugin 'dandorman/vim-colors'
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle Cleanup
+"""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#end()
 filetype plugin indent on
 
-""""""""""""""""""""""""""""""""""
-" Git Settings
-""""""""""""""""""""""""""""""""""
-
-silent! map <unique> <Leader>gs :Gstatus<CR>
-silent! map <unique> <Leader>gb :Gblame<CR>
-silent! map <unique> <Leader>gr :Ggrep 
-
-
-""""""""""""""""""""""""""""""""""
-" Rails Settings
-""""""""""""""""""""""""""""""""""
-
-silent! map <unique> <Leader>rm :Vmodel<CR>
-silent! map <unique> <Leader>rv :Vview<CR>
-silent! map <unique> <Leader>rc :Vcontroller<CR>
-silent! map <unique> <Leader>rt :Rails console<CR>
-silent! map <unique> <Leader>rs :Rails server<CR>
-silent! map <unique> <Leader>rx :Rextract 
-silent! map <unique> <Leader>rgc :Rgenerate controller 
-silent! map <unique> <Leader>rgm :Rgenerate model 
-silent! map <unique> <Leader>rgg :Rgenerate migration 
-silent! map <unique> <Leader>rgj :Rgenerate job 
-
-""""""""""""""""""""""""""""""""""
-" SimpleCov-Vim Settings
-""""""""""""""""""""""""""""""""""
-
-silent! map <unique> <Leader>c :so coverage.vim<CR>
-
-""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " Editor Settings
-""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
+set number
+set relativenumber
 set tabstop=2
 set expandtab
 set shiftwidth=2
 set syntax=on
-set relativenumber
-set t_Co=256
-set guioptions="agimrLt"
+set t_co=256
+"set giuoptions="agimrLt"
 set mouse=""
 set t_ut=
 set background=dark
-set backupdir=~/.vimbak
 syntax enable
-colorscheme molokai
-set enc=utf-8
+set enc=utf8
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
-
-silent! map <unique> <Leader>s :set spell!<CR>
-silent! map <unique> <Leader>k :!bundle exec rake<CR>
-silent! map <unique> <Leader>m :!mix test<CR>
-
-map <C-N> :vsp .<CR>
-map <C-C> :q<CR>
-
 set scrolloff=3
 set iskeyword+=-
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Editor Keymaps
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+silent! map <unique> <Leader>s :set spell!<CR>
+silent! map <unique> <C-c> :q<CR>
